@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cagliostro-updates
+spec:
+  selector:
+    matchLabels:
+      name: cagliostro-updates
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: cagliostro-updates
+    spec:
+      containers:
+        - name: cagliostro-updates
+          image: "docker.io/kaushikc92/cagliostro-updates:latest"
